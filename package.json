@@ -1,0 +1,46 @@
+{
+  "name": "jsmp-infra-milanoleg",
+  "version": "1.0.2",
+  "description": "This is educational project. Dont use it",
+  "main": "./lib/index.js",
+  "scripts": {
+    "compile": "npm run clean && babel src --out-dir lib --presets=es2015,stage-0",
+    "watch": "npm run clean && babel src --watch --out-dir lib --presets=es2015,stage-0",
+    "clean": "rimraf lib/",
+    "test": "mocha lib/test/test.js",
+    "prepublish": "npm run compile && npm run test",
+    "update:major": "npm version major",
+    "update:minor": "npm version minor",
+    "update:patch": "npm version patch"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=7.9.0",
+    "npm": ">3.5.0",
+    "lodash": ">4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milanoleg"
+  },
+  "keywords": [
+    "array",
+    "string",
+    "test package"
+  ],
+  "author": "oleh-milanko <milanko.oleg@gmail.com> (https://github.com/milanoleg)",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "lodash": "^4.17.5",
+    "mocha": "^5.0.5",
+    "rimraf": "^2.6.2"
+  }
+}
